@@ -3,7 +3,687 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mulher, Seus Direitos</title><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mulher, Seus Direitos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: cartilha de leitura vertical — capa curta, menu fixo de atalhos, seções em "páginas" com cartões só onde há ação */
+:root{
+  --bg:#fbf8fc;
+  --band:#f3edf8;
+  --paper:#ffffff;
+  --ink:#2a2233;
+  --muted:#5f566b;
+  --line:#e4dcec;
+  --green:#6a3d9a;
+  --green-soft:#efe6f8;
+  --orange:#c8582b;
+  --orange-soft:#fdeee4;
+  --alert:#b0262f;
+  --alert-soft:#fde6e7;
+  --chip:#f1ebf7;
+  --f-display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Verdana", system-ui, sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17131c;--band:#1e1925;--paper:#231d2b;--ink:#efe9f4;--muted:#b6abc2;--line:#362e40;
+  --green:#c3a1ec;--green-soft:#2e2340;--orange:#f39a6e;--orange-soft:#3b2519;
+  --alert:#ff8e95;--alert-soft:#3d1b20;--chip:#2a2233;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17131c;--band:#1e1925;--paper:#231d2b;--ink:#efe9f4;--muted:#b6abc2;--line:#362e40;
+  --green:#c3a1ec;--green-soft:#2e2340;--orange:#f39a6e;--orange-soft:#3b2519;
+  --alert:#ff8e95;--alert-soft:#3d1b20;--chip:#2a2233;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:clamp(1.6rem,4.5vw,2.2rem);font-weight:800;color:var(--green)}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0}
+a{color:var(--green);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:6px}
+.eyebrow{font-family:var(--f-display);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:62ch}
+.stack{display:flex;flex-direction:column;gap:14px}
+
+/* capa */
+.cover{background:var(--paper);border-bottom:1px solid var(--line)}
+.cover .wrap{padding-block:28px 34px;display:flex;flex-direction:column;gap:18px}
+.logo-chip{align-self:flex-start;background:#ffffff;border-radius:10px;padding:8px 12px;border:1px solid var(--line)}
+.logo-chip img{display:block;height:46px;width:auto}
+.cover h1{font-size:clamp(2.6rem,10vw,4.6rem);font-weight:800;letter-spacing:-.025em;line-height:1}
+.cover h1 span{color:var(--green)}
+.cover .tagline{font-family:var(--f-display);font-weight:700;font-size:clamp(1.3rem,4.5vw,1.9rem);color:var(--orange);margin-top:-6px}
+.cover .q{font-family:var(--f-display);font-weight:700;font-size:clamp(1.15rem,3.4vw,1.45rem);background:var(--green-soft);color:var(--green);padding:10px 14px;border-radius:10px;align-self:flex-start}
+
+/* menu */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav.toc .wrap::-webkit-scrollbar{display:none}
+nav.toc a{flex:0 0 auto;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:.92rem;color:var(--ink);background:var(--chip);padding:7px 13px;border-radius:999px;white-space:nowrap}
+nav.toc a.sos{background:var(--alert);color:#fff}
+nav.toc a.on{background:var(--green);color:var(--paper)}
+
+section{padding-block:44px;border-bottom:1px solid var(--line)}
+section:nth-of-type(even){background:var(--band)}
+body{line-height:1.7}
+.lead{color:var(--ink);opacity:.86}
+section .wrap{display:flex;flex-direction:column;gap:20px}
+.num{font-family:var(--f-display);font-weight:800;color:var(--orange)}
+
+/* emergência */
+.sos-box{background:var(--alert-soft);border:2px solid var(--alert);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:14px}
+.sos-box h2{color:var(--alert)}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.phone{background:var(--paper);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.phone b{font-family:var(--f-display);font-size:2rem;line-height:1;color:var(--alert)}
+.phone span{font-size:.92rem;color:var(--muted)}
+
+/* guia rápido */
+.finder{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.need{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px}
+.need .ask{font-weight:700}
+.need .go{display:flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:700;color:var(--green)}
+.need .go::before{content:"→";color:var(--orange)}
+.need a{font-size:.92rem}
+
+/* blocos explicativos */
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:10px}
+.box ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green);align-self:flex-start}
+.tag.o{background:var(--orange-soft);color:var(--orange)}
+.note{background:var(--orange-soft);border-radius:var(--r);padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.note::before{content:"!";flex:0 0 26px;height:26px;border-radius:50%;background:var(--orange);color:var(--paper);display:grid;place-items:center;font-weight:700;font-family:var(--f-display)}
+.note p{min-width:0}
+
+/* passo a passo */
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--paper);display:grid;place-items:center;font-family:var(--f-display);font-weight:800}
+ol.steps li div{min-width:0;padding-top:5px}
+
+/* benefícios */
+details.ben{background:var(--paper);border:1px solid var(--line);border-radius:var(--r)}
+details.ben summary{cursor:pointer;list-style:none;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--f-display);font-weight:700;font-size:1.08rem}
+details.ben summary::-webkit-details-marker{display:none}
+details.ben summary::after{content:"+";font-size:1.4rem;color:var(--orange);flex:0 0 auto}
+details.ben[open] summary::after{content:"–"}
+details.ben .in{padding:0 16px 16px;display:flex;flex-direction:column;gap:10px}
+.lvl{display:flex;gap:6px;flex-wrap:wrap}
+
+/* endereços */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{font:inherit;font-family:var(--f-display);font-weight:700;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--green);color:var(--paper);border-color:var(--green)}
+.search{display:flex;flex-direction:column;gap:6px}
+.search label{font-weight:700}
+.search input{font:inherit;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
+.search input:focus{border-color:var(--green);outline:none}
+.count{font-size:.92rem;color:var(--muted)}
+.places{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.place{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.place .n{font-family:var(--f-display);font-weight:700;line-height:1.25}
+.place .b{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--orange)}
+.place .a{font-size:.95rem;color:var(--muted)}
+.place .t{font-variant-numeric:tabular-nums;font-weight:700;overflow-wrap:anywhere}
+.place.creas{border-color:var(--green)}
+.place.clin{border-left:4px solid var(--green)}
+.empty{color:var(--muted);font-style:italic}
+
+/* links úteis */
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.link{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.link b{font-family:var(--f-display)}
+.link span{font-size:.94rem;color:var(--muted);overflow-wrap:anywhere}
+
+/* clínicas */
+.clinics{display:flex;flex-direction:column;gap:12px}
+.clinic{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:6px 14px}
+.clinic h3{grid-column:1}
+.clinic .price{grid-column:2;grid-row:1;align-self:start}
+.clinic .det{grid-column:1/-1;display:flex;flex-direction:column;gap:3px;font-size:.96rem}
+.clinic .det .t{font-weight:700;font-variant-numeric:tabular-nums}
+.clinic .det .m{color:var(--muted)}
+@media (max-width:520px){.clinic{grid-template-columns:1fr}.clinic .price{grid-column:1;grid-row:auto}}
+
+/* rodapé */
+footer{background:var(--paper)}
+footer .wrap{padding-block:40px 48px;display:flex;flex-direction:column;gap:16px}
+footer .credit{font-size:1.02rem;max-width:64ch}
+footer .names{font-size:.94rem;color:var(--muted)}
+.backtop{align-self:flex-start;font-family:var(--f-display);font-weight:700}
+.qr-share{display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:var(--band);border-radius:var(--r);padding:16px}
+.qr-share img{width:132px;height:132px;border-radius:8px;background:#fff;padding:6px;flex:0 0 auto}
+.qr-share div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.qr-share b{font-family:var(--f-display);font-size:1.15rem}
+.qr-share .url{font-weight:700;color:var(--green);font-size:1.1rem;overflow-wrap:anywhere}
+.names{font-size:.85rem;color:var(--muted)}
+.names b{color:var(--green)}
+.authors li{font-size:.75rem;font-weight:700;color:var(--green)}
+.credit-prof{font-size:.75rem;font-weight:700;color:var(--green)}
+.cover .names{font-size:.75rem;font-weight:700;color:var(--green)}
+.credits,.credits span,.credits li,.credits p,.credits .names{font-size:.75rem;font-weight:700;color:var(--green)}
+.credits ul{gap:2px}
+.clist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(9,auto);grid-auto-flow:column;column-gap:28px;background:var(--paper);border-radius:12px;padding:6px 18px 10px;font-family:var(--f-body)}
+@media (max-width:640px){.clist{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}}
+.ci{display:flex;flex-direction:column;padding:4px 0;border-bottom:1px solid var(--line);min-width:0}
+.cr{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13.5px;line-height:1.3;font-variant-numeric:tabular-nums}
+.cn{font-family:var(--f-body);font-weight:700;color:var(--green)}
+.ct{font-weight:700;white-space:nowrap;color:var(--ink)}
+a.ct{color:var(--ink);text-decoration:none;white-space:normal;overflow-wrap:anywhere}
+.ca{font-size:12px;line-height:1.3;color:var(--muted)}
+section.t4{background:var(--paper)}
+.t4 .box h3{font-family:var(--f-display);font-size:1.15rem;color:var(--ink)}
+.t4 .sm{font-size:.9rem;color:var(--muted)}
+.alert-red{background:var(--alert-soft);border:2px solid var(--alert);border-radius:12px;padding:14px 18px}
+.alert-red b.r{color:var(--alert)}
+.t4 .clist{background:transparent;padding:0;border-radius:0}
+.t4 .cr{font-size:15.3px}
+.t4 .ca{font-size:13.6px}
+.guia{background:var(--green);color:#ffffff;border-radius:18px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:16px}
+.guia-txt{font-size:clamp(1.15rem,3.4vw,1.4rem);line-height:1.45;max-width:46ch;color:#ffffff}
+.guia-txt b{color:#ffd8c4}
+.guia-passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.passo{display:flex;gap:12px;align-items:flex-start;background:var(--paper);color:var(--ink);border:0;border-radius:12px;padding:12px 14px;text-align:left;font:inherit;text-decoration:none;min-width:0}
+a.passo,button.passo{cursor:pointer;transition:transform .15s ease}
+a.passo:hover,button.passo:hover{transform:translateY(-2px)}
+.passo .ic{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--orange-soft);color:var(--orange);display:grid;place-items:center}
+.passo div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.passo b{font-family:var(--f-display);font-size:1rem;line-height:1.25}
+.passo span{font-size:.9rem;color:var(--muted);overflow-wrap:anywhere}
+.escolha{font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:var(--green);margin-bottom:-6px}
+@media (prefers-reduced-motion:reduce){a.passo,button.passo{transition:none}}
+:root[data-theme="dark"] .guia{background:#3a2852}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .guia{background:#3a2852}}
+</style>
+<style>
+.theme-head{display:flex;gap:16px;align-items:flex-start}
+.theme-num{flex:0 0 auto;width:56px;height:56px;border-radius:16px;background:var(--green);color:var(--paper);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.7rem}
+.theme-head div{min-width:0;display:flex;flex-direction:column;gap:6px}
+h3.sub{font-size:1.3rem;color:var(--ink);margin-top:10px}
+.mapa{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.mapa a{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:4px}
+.mapa a b{font-family:var(--f-display);font-size:1.6rem;color:var(--orange);line-height:1}
+.mapa a span{font-weight:700;line-height:1.3}
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.type{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.type b{font-family:var(--f-display);color:var(--green);font-size:1.08rem}
+.type span{font-size:.95rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="logo-chip"><img src="https://www.opet.com.br/themes/opet/assets/site/img/logo-uniopet.svg" alt="Centro Universitário UniOpet"></div>
+    <span class="eyebrow">Cartilha de direitos · Curitiba e Região Metropolitana</span>
+    <h1>Mulher, você tem <span>direitos.</span></h1>
+    <p class="tagline">E tem para onde ir.</p>
+    <p class="names">Elaborado por <b>Aliny Herrero, Danieli Francis das Dores, Ivan Abilio Nunes, Kauane Henequim de Oliveira e Thaís Stefany da Silva</b><br><b>Orientação: Profª Ms. Heloisa Canteri Langa · Centro Universitário UniOpet</b> · 2026</p>
+    <div class="guia" role="note" aria-label="Como usar este guia">
+      <p class="guia-txt">Este guia reúne, em <b>linguagem simples</b>, os lugares, programas e serviços que existem para <b>apoiar você</b>.</p>
+      <div class="guia-passos">
+        <div class="passo"><span class="ic" aria-hidden="true">📖</span><div><b>Leia no seu ritmo</b><span>Sem pressa. Volte quando precisar.</span></div></div>
+        <a class="passo" href="#escolha"><span class="ic" aria-hidden="true">👇</span><div><b>Pule direto para o tema que precisa</b><span>Toque em um dos 5 temas logo abaixo.</span></div></a>
+        <button type="button" class="passo" id="btn-share"><span class="ic" aria-hidden="true">🔗</span><div><b>Compartilhe com quem também possa precisar</b><span id="share-msg">Toque para copiar o link: <u>tinyurl.com/m577rxsp</u></span></div></button>
+      </div>
+    </div>
+    <p class="escolha" id="escolha">Escolha um tema <span aria-hidden="true">↓</span></p>
+    <div class="mapa" aria-label="Os 5 temas da cartilha">
+      <a href="#tema1"><b>1</b><span>Proteção e enfrentamento à violência</span></a>
+      <a href="#tema2"><b>2</b><span>Assistência Social e benefícios</span></a>
+      <a href="#tema3"><b>3</b><span>Cursos, ONGs e geração de renda</span></a>
+      <a href="#tema4"><b>4</b><span>Saúde da mulher</span></a>
+      <a href="#tema5"><b>5</b><span>Direitos, justiça e denúncia</span></a>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Atalhos da cartilha">
+  <div class="wrap">
+    <a href="#socorro" class="sos">Socorro agora</a>
+    <a href="#para-onde">Para onde eu vou?</a>
+    <a href="#tema1">1 · Violência</a>
+    <a href="#tema2">2 · Assistência</a>
+    <a href="#tema3">3 · Renda</a>
+    <a href="#tema4">4 · Saúde</a>
+    <a href="#tema5">5 · Direitos</a>
+    <a href="#enderecos">Endereços</a>
+    <a href="#sobre">Sobre</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="socorro">
+  <div class="wrap">
+    <div class="sos-box">
+      <h2>Está em perigo agora?</h2>
+      <p>Se você ou alguém está correndo risco neste momento, ligue. Todas as ligações abaixo são <b>gratuitas</b>.</p>
+      <div class="phones">
+        <div class="phone"><b>190</b><span>Polícia Militar: violência acontecendo agora</span></div>
+        <div class="phone"><b>153</b><span>Guarda Municipal de Curitiba: também se o agressor desrespeitar a medida protetiva</span></div>
+        <div class="phone"><b>180</b><span>Central de Atendimento à Mulher: 24 horas, denúncia e orientação</span></div>
+        <div class="phone"><b>192</b><span>SAMU: emergência de saúde</span></div>
+        <div class="phone"><b>188</b><span>CVV: apoio emocional, 24 horas</span></div>
+      </div>
+      <p>Você não precisa ter certeza de que “é grave o suficiente” para pedir ajuda.</p>
+    </div>
+  </div>
+</section>
+
+<section id="para-onde">
+  <div class="wrap">
+    <span class="eyebrow">Comece por aqui</span>
+    <h2>Para onde eu vou?</h2>
+    <p class="lead">Encontre a situação mais parecida com a sua. Se não souber por onde começar, o <b>CRAS</b> mais perto da sua casa é uma boa porta de entrada: lá a equipe escuta e mostra o caminho.</p>
+    <div class="finder">
+      <div class="need"><p class="ask">Sofro violência em casa ou da família.</p><p class="go">Casa da Mulher Brasileira · 180</p><a href="#tema1">Tema 1: Proteção</a></div>
+      <div class="need"><p class="ask">Preciso de uma medida protetiva.</p><p class="go">Delegacia da Mulher · Ampara on-line</p><a href="#protetiva">Como pedir</a></div>
+      <div class="need"><p class="ask">O dinheiro não está dando para o básico da casa.</p><p class="go">CRAS + Cadastro Único</p><a href="#tema2">Tema 2: Assistência</a></div>
+      <div class="need"><p class="ask">Quero estudar, me qualificar ou ter minha renda.</p><p class="go">Liceus de Ofícios · FAS para Elas</p><a href="#tema3">Tema 3: Renda</a></div>
+      <div class="need"><p class="ask">Preciso fazer o preventivo, pré-natal ou cuidar da saúde.</p><p class="go">Unidade de Saúde do bairro</p><a href="#tema4">Tema 4: Saúde</a></div>
+      <div class="need"><p class="ask">Sofri violência sexual.</p><p class="go">Hospital de referência, em até 72 horas</p><a href="#sexual">O que fazer</a></div>
+      <div class="need"><p class="ask">Estou sofrendo emocionalmente e preciso conversar.</p><p class="go">Clínicas-escola · CVV 188</p><a href="#psicologia">Lista de clínicas</a></div>
+      <div class="need"><p class="ask">Preciso de pensão, divórcio ou guarda e não posso pagar advogado.</p><p class="go">Defensoria Pública</p><a href="#tema5">Tema 5: Direitos</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMA 1 -->
+<section id="tema1">
+  <div class="wrap">
+    <div class="theme-head"><span class="theme-num">1</span><div><span class="eyebrow">Tema 1</span><h2>Proteção e enfrentamento à violência</h2></div></div>
+    <p class="lead">Violência contra a mulher não é só agressão física. A <b>Lei Maria da Penha</b> (Lei nº 11.340/2006) reconhece cinco formas de violência doméstica e familiar. Saber nomear o que acontece é o primeiro passo para buscar ajuda.</p>
+    <div class="types">
+      <div class="type"><b>Física</b><span>Bater, empurrar, apertar, queimar, machucar o corpo.</span></div>
+      <div class="type"><b>Psicológica</b><span>Humilhar, ameaçar, controlar, isolar, vigiar, fazer você duvidar de si mesma.</span></div>
+      <div class="type"><b>Sexual</b><span>Forçar relação ou prática sexual, impedir o uso de método contraceptivo.</span></div>
+      <div class="type"><b>Patrimonial</b><span>Tomar, quebrar ou esconder seus documentos, objetos, dinheiro ou salário.</span></div>
+      <div class="type"><b>Moral</b><span>Caluniar, difamar, inventar mentiras para manchar sua imagem.</span></div>
+    </div>
+
+    <h3 class="sub">Onde buscar proteção em Curitiba</h3>
+    <div class="split">
+      <div class="box"><span class="tag">24 horas</span><h3>Casa da Mulher Brasileira</h3>
+        <p>Reúne em um só lugar acolhimento psicossocial, Delegacia da Mulher, Defensoria Pública, Juizado, Ministério Público, Patrulha Maria da Penha, programas de autonomia econômica, brinquedoteca e espaço para pets. Tem alojamento de passagem para mulheres em risco.</p>
+        <p class="t"><b>Av. Paraná, 870 – Cabral</b><br><b>(41) 3221-2701 · (41) 3221-2710</b></p></div>
+      <div class="box"><span class="tag">Guarda Municipal</span><h3>Patrulha Maria da Penha</h3>
+        <p>Acompanha mulheres com medida protetiva: faz visitas, orienta e prende o agressor que descumpre a medida.</p>
+        <p class="t"><b>Emergência: 153</b><br><b>(41) 3221-2760 · (41) 3221-2764</b></p></div>
+      <div class="box"><span class="tag o">Registro da ocorrência</span><h3>Delegacia da Mulher</h3>
+        <p>Funciona dentro da Casa da Mulher Brasileira, 24 horas. Para crimes menos graves e ameaças, também existe a <b>Delegacia Eletrônica</b>: policiacivil.pr.gov.br/BO.</p>
+        <p class="t"><b>(41) 3219-8600</b></p></div>
+      <div class="box"><span class="tag o">Acompanhamento</span><h3>CRAM e CREAS</h3>
+        <p>O <b>CRAM</b> (Centro de Referência e Atendimento à Mulher) fica na Rua do Rosário, 144, 8º andar, das 8h30 às 17h30. O <b>CREAS</b> do seu bairro acompanha a família após a violência.</p></div>
+    </div>
+
+    <h3 class="sub" id="protetiva">Como pedir uma medida protetiva</h3>
+    <p>A medida protetiva é uma ordem da Justiça que obriga o agressor a se afastar de você, por exemplo, proibindo que ele se aproxime ou entre em contato.</p>
+    <ol class="steps">
+      <li><div><b>Na Delegacia da Mulher</b>, junto com o boletim de ocorrência, ou direto no <b>Juizado de Violência Doméstica</b>: (41) 3200-3252.</div></li>
+      <li><div><b>Pela internet, pelo Ampara</b> da Defensoria Pública do Paraná (ampara.defensoriapublica.pr.def.br): faça o cadastro, escolha “Violência doméstica” e depois “Medida Protetiva de Urgência”. Não precisa de boletim de ocorrência antes. O atendimento é por telefone.</div></li>
+      <li><div>Com a medida em mãos, a <b>Patrulha Maria da Penha</b> pode acompanhar você. Se o agressor descumprir, ligue <b>153</b> ou <b>190</b>.</div></li>
+    </ol>
+    <div class="note"><p><b>Pensando em sair de casa?</b> Se puder, separe com antecedência documentos (seus e dos filhos), cartões, remédios, um carregador e algum dinheiro, e combine um sinal com alguém de confiança. No <b>Paraná</b>, o <b>Programa Recomeço</b> oferece o Auxílio Social Mulher Paranaense para ajudar mulheres a se afastarem do risco (veja no Tema 2).</p></div>
+  </div>
+</section>
+
+<!-- TEMA 2 -->
+<section id="tema2">
+  <div class="wrap">
+    <div class="theme-head"><span class="theme-num">2</span><div><span class="eyebrow">Tema 2</span><h2>Assistência Social e benefícios</h2></div></div>
+    <p class="lead">A Assistência Social é um <b>direito</b>, não um favor. Ela é organizada pelo SUAS e chega até você principalmente por dois lugares: o <b>CRAS</b> e o <b>CREAS</b>.</p>
+    <div class="split">
+      <div class="box"><span class="tag">Proteção Social Básica</span><h3>CRAS: a porta de entrada</h3>
+        <p>Serviço público e gratuito perto da sua casa. Previne dificuldades e fortalece os laços da família.</p>
+        <ul>
+          <li>fazer ou atualizar o <b>Cadastro Único</b>;</li>
+          <li>saber quais <b>benefícios</b> combinam com a sua situação;</li>
+          <li>acompanhamento pelo <b>PAIF</b>;</li>
+          <li>encaminhamento para outros serviços.</li>
+        </ul>
+        <p>Você pode ir mesmo sem saber o nome do que precisa.</p></div>
+      <div class="box"><span class="tag o">Proteção Social Especial</span><h3>CREAS: quando um direito foi violado</h3>
+        <p>Atende pessoas e famílias que sofreram, ou estão ameaçadas de sofrer, violação de direitos, incluindo a <b>violência doméstica</b>.</p>
+        <ul>
+          <li>acompanhamento especializado pelo <b>PAEFI</b>;</li>
+          <li>você pode ir por conta própria, ser encaminhada pela rede ou ser procurada pela equipe.</li>
+        </ul>
+        <p>Curitiba tem <b>39 CRAS e 10 CREAS</b>. <a href="#enderecos">Ver endereços</a>.</p></div>
+    </div>
+
+    <h3 class="sub" id="cadunico">Cadastro Único: a chave de muitas portas</h3>
+    <p>O Cadastro Único <b>não é um benefício</b>. É um cadastro do governo que identifica famílias de baixa renda e é usado para escolher quem recebe vários programas. Faça no <b>CRAS</b> e acompanhe pelo aplicativo ou portal <b>gov.br</b>. Mantenha seus dados sempre atualizados.</p>
+
+    <h3 class="sub">Benefícios e programas</h3>
+    <p>Existem programas <b>federais</b>, <b>estaduais</b> (Paraná) e <b>municipais</b> (Curitiba). Toque em cada um para saber mais.</p>
+    <div class="stack">
+      <details class="ben"><summary>Bolsa Família</summary><div class="in"><div class="lvl"><span class="tag">Federal</span></div><p>Transferência de renda para famílias em situação de vulnerabilidade, com seleção pelo Cadastro Único.</p><p><b>Onde perguntar:</b> CRAS.</p></div></details>
+      <details class="ben"><summary>BPC – Benefício de Prestação Continuada</summary><div class="in"><div class="lvl"><span class="tag">Federal</span></div><p>Benefício assistencial com critérios próprios, ligado ao Cadastro Único.</p><p><b>Onde perguntar:</b> CRAS.</p></div></details>
+      <details class="ben"><summary>Energia: Tarifa Social e Energia Solidária</summary><div class="in"><div class="lvl"><span class="tag">Federal</span><span class="tag o">Paraná</span></div><p>Ajudam a diminuir a conta de luz de famílias de baixa renda.</p><p><b>Onde perguntar:</b> CRAS ou Portal da Mulher Paranaense.</p></div></details>
+      <details class="ben"><summary>Gás do Povo</summary><div class="in"><div class="lvl"><span class="tag">Federal</span></div><p>Apoio para a compra do gás de cozinha, usando o Cadastro Único.</p><p><b>Onde perguntar:</b> CRAS.</p></div></details>
+      <details class="ben"><summary>Moradia, estudo e inclusão</summary><div class="in"><div class="lvl"><span class="tag">Federal</span></div><p><b>Minha Casa Minha Vida</b>, <b>Pé-de-Meia</b>, <b>Auxílio-Inclusão</b>, <b>Carteira da Pessoa Idosa</b> e programas de <b>segurança alimentar</b> também usam o Cadastro Único.</p><p><b>Onde perguntar:</b> CRAS.</p></div></details>
+      <details class="ben"><summary>Leite das Crianças</summary><div class="in"><div class="lvl"><span class="tag o">Paraná</span></div><p>Programa estadual de distribuição de leite.</p><p><b>Onde perguntar:</b> CRAS ou Portal da Mulher Paranaense.</p></div></details>
+      <details class="ben"><summary>Programa Recomeço – Auxílio Social Mulher Paranaense</summary><div class="in"><div class="lvl"><span class="tag o">Paraná</span></div><p>Auxílio para <b>mulheres em situação de violência doméstica e familiar</b> que precisam de apoio para se afastar do risco. Já é pago desde janeiro de 2026.</p><p><b>Onde perguntar:</b> CREAS, Casa da Mulher Brasileira, Defensoria Pública ou Portal da Mulher Paranaense.</p></div></details>
+      <details class="ben"><summary>FAS para Elas</summary><div class="in"><div class="lvl"><span class="tag">Curitiba</span></div><p>Programa da FAS para mulheres em vulnerabilidade, com foco em autonomia, qualificação e projeto de vida.</p><p><b>Onde perguntar:</b> CRAS do seu bairro.</p></div></details>
+      <details class="ben"><summary>Acolhimento: Pousada de Maria</summary><div class="in"><div class="lvl"><span class="tag">Curitiba</span></div><p>Casa de acolhimento para mulheres em risco social ou vítimas de violência doméstica. O acesso é feito pela rede (CREAS, Casa da Mulher Brasileira).</p></div></details>
+    </div>
+    <div class="note"><p>Cumprir os critérios de um programa <b>não significa receber na hora</b>. Significa que você pode pedir orientação e iniciar o processo. Leve documentos pessoais e comprovante de endereço ao atendimento.</p></div>
+  </div>
+</section>
+
+<!-- TEMA 3 -->
+<section id="tema3">
+  <div class="wrap">
+    <div class="theme-head"><span class="theme-num">3</span><div><span class="eyebrow">Tema 3</span><h2>Cursos gratuitos, ONGs e geração de renda</h2></div></div>
+    <p class="lead">Ter a própria renda aumenta a liberdade de escolha e ajuda muitas mulheres a romper ciclos de violência. Existem cursos gratuitos, crédito com juros baixos e grupos de apoio para começar.</p>
+    <h3 class="sub">Cursos gratuitos</h3>
+    <div class="split">
+      <div class="box"><span class="tag">Curitiba</span><h3>Liceus de Ofícios e Inovação</h3>
+        <p>Cursos gratuitos da Prefeitura, com certificado: confeitaria, corte e costura, beleza, conserto de eletrodomésticos e outros, muitos voltados para mulheres.</p>
+        <p><b>Informações:</b> Central 156 ou site da Prefeitura de Curitiba.</p></div>
+      <div class="box"><span class="tag">Curitiba</span><h3>FAS para Elas</h3>
+        <p>Ajuda mulheres em vulnerabilidade a descobrir habilidades, se qualificar e melhorar as chances de emprego.</p>
+        <p><b>Informações:</b> CRAS do seu bairro.</p></div>
+      <div class="box"><span class="tag o">Paraná</span><h3>Senai</h3>
+        <p>Abre turmas gratuitas exclusivas para mulheres em Curitiba e Região Metropolitana, em áreas como confecção, elétrica, mecânica e alimentos.</p>
+        <p><b>Informações:</b> unidades do Senai Paraná. As vagas abrem em épocas específicas.</p></div>
+    </div>
+    <h3 class="sub">Para quem quer empreender</h3>
+    <div class="split">
+      <div class="box"><span class="tag">Curitiba</span><h3>Empreendedora Curitibana</h3>
+        <p>Programa da Prefeitura com cursos, materiais e capacitação para mulheres empreendedoras.</p>
+        <p><b>Site:</b> agenciacuritiba.com.br</p></div>
+      <div class="box"><span class="tag o">Paraná</span><h3>Banco da Mulher Paranaense</h3>
+        <p>Crédito com juros baixos para mulheres empreendedoras, inclusive <b>informais</b> (artesãs, cabeleireiras, boleiras, ambulantes) e MEIs. É preciso ter um avalista.</p>
+        <p><b>Dúvidas:</b> (41) 3200-5900 · pedido on-line pelo site da Fomento Paraná.</p></div>
+    </div>
+    <h3 class="sub">ONGs e coletivos</h3>
+    <div class="split">
+      <div class="box"><span class="tag">ONG</span><h3>Instituto Batom</h3>
+        <p>Apoia mulheres que passaram por violência a sair do ciclo de abuso e voltar ao mercado de trabalho.</p>
+        <p><b>Site:</b> institutobatom.com.br</p></div>
+      <div class="box"><span class="tag">Apoio on-line</span><h3>Ser Mulher (LBV)</h3>
+        <p>Atendimento psicológico on-line gratuito para mulheres.</p>
+        <p><b>Inscrição pelo WhatsApp:</b> (11) 99996-6557</p></div>
+    </div>
+    <div class="note"><p>Pergunte também no <b>CRAS</b> e na <b>Casa da Mulher Brasileira</b>, que trabalham com programas de autonomia econômica e conhecem as oportunidades abertas no momento.</p></div>
+  </div>
+</section>
+
+<!-- TEMA 4 -->
+<section id="tema4" class="t4">
+  <div class="wrap">
+    <div class="theme-head"><span class="theme-num">4</span><div><span class="eyebrow">Tema 4</span><h2>Saúde da mulher</h2></div></div>
+    <p class="lead">O SUS cuida da mulher em todas as fases da vida, de graça. A porta de entrada é a <b>Unidade de Saúde</b> do seu bairro.</p>
+    <div class="split">
+      <div class="box"><h3>Na Unidade de Saúde</h3>
+        <ul>
+          <li><b>preventivo</b> (exame do colo do útero);</li>
+          <li>pedido de <b>mamografia</b>;</li>
+          <li><b>planejamento reprodutivo</b> e contraceptivos;</li>
+          <li>vacinas, testes rápidos e consultas.</li>
+        </ul>
+        <p class="sm">Pergunte quando fazer cada exame, conforme sua idade.</p></div>
+      <div class="box"><h3>Rede Mãe Curitibana Vale a Vida</h3>
+        <p>Do planejamento da gravidez ao pós-parto: pré-natal com consultas, exames, remédios e vinculação à maternidade.</p>
+        <p class="sm">Procure a Unidade de Saúde assim que suspeitar da gravidez.</p></div>
+    </div>
+    <div class="alert-red" id="sexual"><b class="r">Sofreu violência sexual?</b> Procure um <b>hospital</b> o quanto antes, de preferência <b>em até 72 horas</b>, para receber remédios que previnem infecções e gravidez. <b>Não precisa de boletim de ocorrência.</b> Em Curitiba: <b>Hospital de Clínicas</b> e <b>Hospital Evangélico Mackenzie</b>.</div>
+    <h3 class="sub" id="psicologia">Saúde emocional: clínicas-escola de Psicologia</h3>
+    <p>Atendimento feito por estudantes dos últimos anos, com supervisão de professores psicólogos. <b>Gratuito ou com valor social</b>: pergunte ao ligar e peça para entrar na lista de espera.</p>
+    <div class="clist">
+<div class="ci"><div class="cr"><b class="cn">Cruzeiro do Sul</b><b class="ct">(41) 99981-0177</b></div><span class="ca">Mesmo contato do Centro de Psicologia da Universidade Positivo – Ecoville</span></div>
+<div class="ci"><div class="cr"><b class="cn">Estácio</b><b class="ct">(41) 3592-2720</b></div><span class="ca">Av. Senador Souza Naves, 1715 – Cristo Rei</span></div>
+<div class="ci"><div class="cr"><b class="cn">FAE</b><b class="ct">(41) 2105-4815</b></div><span class="ca">Rua 24 de Maio, 135 – Centro</span></div>
+<div class="ci"><div class="cr"><b class="cn">FESP</b><b class="ct">(41) 9231-7193</b></div><span class="ca">Endereço: confirme ao ligar</span></div>
+<div class="ci"><div class="cr"><b class="cn">FPP</b><b class="ct">(41) 3310-1515</b></div><span class="ca">Ambulatório Interprofissional – Rua João Negrão, Centro</span></div>
+<div class="ci"><div class="cr"><b class="cn">Gran</b><a class="ct" href="https://forms.gle/ZqBm1wJLHqDeNUWx6" target="_blank" rel="noopener">forms.gle/ZqBm1wJLHqDeNUWx6</a></div><span class="ca">Inscrição on-line pelo formulário</span></div>
+<div class="ci"><div class="cr"><b class="cn">Inspirar</b><b class="ct">(41) 99545-0268</b></div><span class="ca">Endereço: confirme ao ligar</span></div>
+<div class="ci"><div class="cr"><b class="cn">PUCPR</b><b class="ct">(41) 98467-7169</b></div><span class="ca">Rua Rockefeller, 1450 – Rebouças</span></div>
+<div class="ci"><div class="cr"><b class="cn">Tuiuti</b><b class="ct">(41) 3331-7846</b></div><span class="ca">Rua Padre Ladislau Kula, 395 – Santo Inácio (Câmpus Barigui)</span></div>
+<div class="ci"><div class="cr"><b class="cn">UFPR</b><b class="ct">(41) 98402-5209</b></div><span class="ca">Praça Santos Andrade, 50, 1º andar – Centro</span></div>
+<div class="ci"><div class="cr"><b class="cn">Uniandrade</b><b class="ct">(41) 3219-4248</b></div><span class="ca">Al. Dr. Muricy, 706 – Centro</span></div>
+<div class="ci"><div class="cr"><b class="cn">UniBrasil</b><b class="ct">(41) 3267-9108</b></div><span class="ca">Câmpus Tarumã, Bloco 8</span></div>
+<div class="ci"><div class="cr"><b class="cn">UniCesumar</b><b class="ct">(41) 99193-7523</b></div><span class="ca">Endereço: confirme ao ligar</span></div>
+<div class="ci"><div class="cr"><b class="cn">UniCuritiba</b><b class="ct">(41) 99134-5584</b></div><span class="ca">R. Chile, 1678 – Rebouças</span></div>
+<div class="ci"><div class="cr"><b class="cn">UniDomBosco</b><b class="ct">(41) 3213-5273</b></div><span class="ca">Av. Pres. Wenceslau Braz, 1172 – Guaíra</span></div>
+<div class="ci"><div class="cr"><b class="cn">UniFatec</b><b class="ct">(41) 99838-0167</b></div><span class="ca">Endereço: confirme ao ligar</span></div>
+<div class="ci"><div class="cr"><b class="cn">UniOpet</b><b class="ct">(41) 99261-5229</b></div><span class="ca">Av. Pres. Getúlio Vargas, 892 – Rebouças</span></div>
+<div class="ci"><div class="cr"><b class="cn">UP</b><b class="ct">(41) 99981-0177</b></div><span class="ca">R. Prof. Pedro Viriato Parigot de Souza, 5300 – Ecoville, Bloco Amarelo</span></div>
+</div>
+    <p class="sm">Pelo SUS, a Unidade de Saúde também avalia e encaminha para os CAPS. Apoio emocional 24h: <b>CVV 188</b>.</p>
+  </div>
+</section>
+
+<!-- TEMA 5 -->
+<section id="tema5">
+  <div class="wrap">
+    <div class="theme-head"><span class="theme-num">5</span><div><span class="eyebrow">Tema 5</span><h2>Direitos, justiça e canais de denúncia</h2></div></div>
+    <p class="lead">Conhecer seus direitos ajuda a reconhecer quando eles não são respeitados. E existem lugares para denunciar e buscar justiça sem precisar pagar advogado.</p>
+    <div class="types">
+      <div class="type"><b>Viver sem violência</b><span>A Lei Maria da Penha protege a mulher em casa, na família e em relações afetivas, mesmo sem morar junto.</span></div>
+      <div class="type"><b>Salário igual</b><span>Mulheres e homens na mesma função devem receber o mesmo salário (Lei nº 14.611/2023).</span></div>
+      <div class="type"><b>Acompanhante no parto</b><span>Você tem direito a um acompanhante de sua escolha no pré-parto, parto e pós-parto (Lei nº 11.108/2005).</span></div>
+      <div class="type"><b>Pensão e guarda</b><span>Os filhos têm direito à pensão alimentícia. A Defensoria ajuda a pedir, gratuitamente.</span></div>
+    </div>
+    <h3 class="sub">Onde buscar justiça</h3>
+    <div class="split">
+      <div class="box"><span class="tag">Gratuito</span><h3>Defensoria Pública do Paraná</h3>
+        <p>Advogados públicos para quem não pode pagar: pensão, divórcio, guarda, violência doméstica. O <b>NUDEM</b> é o núcleo que defende os direitos das mulheres.</p>
+        <p class="t"><b>Na Casa da Mulher Brasileira: (41) 3221-2731</b><br>On-line: ampara.defensoriapublica.pr.def.br</p></div>
+      <div class="box"><span class="tag">Justiça</span><h3>Juizado de Violência Doméstica</h3>
+        <p>Decide sobre medidas protetivas e processos de violência doméstica e familiar contra a mulher.</p>
+        <p class="t"><b>(41) 3200-3252</b></p></div>
+      <div class="box"><span class="tag o">Faculdades</span><h3>Núcleos de Prática Jurídica</h3>
+        <p>Muitos cursos de Direito oferecem orientação jurídica gratuita à comunidade. Pergunte nas faculdades da sua região.</p></div>
+    </div>
+    <h3 class="sub">Canais de denúncia</h3>
+    <div class="links">
+      <div class="link"><b>180 – Central de Atendimento à Mulher</b><span>Gratuito, 24h. Denúncia e orientação sobre direitos.</span></div>
+      <div class="link"><b>100 – Disque Direitos Humanos</b><span>Gratuito, 24h. Violações de direitos de mulheres, crianças, idosos e outros grupos.</span></div>
+      <div class="link"><b>190 – Polícia Militar</b><span>Violência acontecendo agora.</span></div>
+      <div class="link"><b>153 – Guarda Municipal</b><span>Emergência em Curitiba e descumprimento de medida protetiva.</span></div>
+      <div class="link"><b>Delegacia Eletrônica</b><span>policiacivil.pr.gov.br/BO · boletim on-line para crimes menos graves e ameaças.</span></div>
+      <div class="link"><b>Delegacia da Mulher</b><span>(41) 3219-8600 · Av. Paraná, 870 – Cabral, 24h.</span></div>
+    </div>
+    <h3 class="sub" id="canais">Sites úteis</h3>
+    <div class="links">
+      <div class="link"><b>FAS Curitiba</b><span>fas.curitiba.pr.gov.br · rede de CRAS e CREAS</span></div>
+      <div class="link"><b>Locais da Prefeitura</b><span>locais.curitiba.pr.gov.br · endereço e mapa de cada unidade</span></div>
+      <div class="link"><b>Portal da Mulher Paranaense</b><span>amese.pr.gov.br · serviços estaduais para mulheres</span></div>
+      <div class="link"><b>Cadastro Único</b><span>gov.br · consulta e atualização</span></div>
+      <div class="link"><b>Disque CREAS 0800 707 2003</b><span>Orientação gratuita, usado por vários municípios da região</span></div>
+      <div class="link"><b>Central 156</b><span>Informações sobre serviços da Prefeitura de Curitiba</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="enderecos">
+  <div class="wrap">
+    <span class="eyebrow">Encontre a unidade mais perto</span>
+    <h2>Endereços de CRAS e CREAS</h2>
+    <p class="lead">Escolha a lista e digite o nome do seu bairro, cidade ou da unidade.</p>
+    <div class="tabs" role="group" aria-label="Escolha a lista">
+      <button type="button" id="tab-cras" aria-pressed="true" data-list="cras">CRAS Curitiba (39)</button>
+      <button type="button" id="tab-creas" aria-pressed="false" data-list="creas">CREAS Curitiba (10)</button>
+      <button type="button" id="tab-rmc" aria-pressed="false" data-list="rmc">Região Metropolitana</button>
+    </div>
+    <div class="search">
+      <label for="busca">Buscar por bairro, cidade ou unidade</label>
+      <input id="busca" type="search" placeholder="Ex.: Boqueirão, Colombo, Tatuquara" autocomplete="off">
+    </div>
+    <p class="count" id="contagem" aria-live="polite"></p>
+    <div class="places" id="lista"></div>
+    <div class="note"><p>Na Região Metropolitana, nem todas as prefeituras publicam a lista completa de unidades. Se a sua cidade ou bairro não aparecer, ligue para a <b>Secretaria Municipal de Assistência Social</b> e pergunte qual unidade atende você.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer id="sobre">
+  <div class="wrap">
+    <div class="logo-chip"><img src="https://www.opet.com.br/themes/opet/assets/site/img/logo-uniopet.svg" alt="Centro Universitário UniOpet"></div>
+    <h2>Sobre este material</h2>
+    <p class="credit">Esta cartilha foi desenvolvida pelos <b>alunos do curso de Psicologia do Centro Universitário UniOpet, em 2026</b>, com intuito informativo: promover o acesso às informações e a conscientização acerca dos direitos das mulheres.</p>
+    <div class="note"><p>Alguns dados, como <b>telefones, endereços e horários, podem ser alterados com o tempo</b>. Antes de ir até um serviço, se possível, confirme por telefone ou nos sites oficiais. Este material não substitui a orientação das equipes dos serviços públicos.</p></div>
+    <div class="box credits"><span>Elaborado por:</span>
+      <ul class="authors">
+        <li>Aliny Herrero</li>
+        <li>Danieli Francis das Dores</li>
+        <li>Ivan Abilio Nunes</li>
+        <li>Kauane Henequim de Oliveira</li>
+        <li>Thaís Stefany da Silva</li>
+      </ul>
+      <p class="credit-prof">Orientação: Profª Ms. Heloisa Canteri Langa · Centro Universitário UniOpet</p>
+      <p class="names">Grupo 2 · Psicologia, 8º período · Projeto Integrador Extensionista (PIEx) · Curitiba, 2026.</p>
+    </div>
+    <div class="qr-share"><div><b>Compartilhe esta cartilha</b><span>Acesse:</span><span class="url">tinyurl.com/m577rxsp</span></div></div>
+    <a class="backtop" href="#socorro">Voltar ao início ↑</a>
+  </div>
+</footer>
+
+<script>
+const DATA={
+cras:[
+["CRAS Bairro Novo","Rua Tijucas do Sul, 1691","Sítio Cercado","(41) 3289-5396"],
+["CRAS Madre Tereza","Rua Guaçuí, 6001","Sítio Cercado","(41) 3265-4200 / 3289-2464"],
+["CRAS Umbará","Rua Deputado Pinheiro Junior, 1650","Umbará","(41) 3348-0395 / 3289-4329"],
+["CRAS Xapinhal","Rua Francisco José Lobo, 416","Sítio Cercado","(41) 3227-6933 / 3348-8403"],
+["CRAS Boa Vista","Rua Luiza Lélia Gulin Geronasso, 313","Boa Vista","(41) 3356-9690 / 3257-0898"],
+["CRAS Atuba","Rua João Batista Scucatto, 120","Atuba","(41) 3356-7352 / 3356-8300"],
+["CRAS Bairro Alto","Rua Jornalista Alceu Chichorro, 323","Bairro Alto","(41) 3315-2296 / 3367-9827"],
+["CRAS Pilarzinho","Rua Guy de Maupassant, 177","Pilarzinho","(41) 3335-7401 / 3338-3554"],
+["CRAS Cachoeira","Rua Rolando Salin Zappa Mansur, 354","Cachoeira","(41) 3240-1302 / 3585-0840"],
+["CRAS Alto Boqueirão","Rua Wilson Dacheux Pereira, s/n","Vila Hauer","(41) 3287-8099 / 3286-1655"],
+["CRAS Boqueirão","Rua Oliveira Viana, 1804","Boqueirão","(41) 3377-5753 / 3276-5142"],
+["CRAS Iguape Cidadania","Rua Maestro Carlos Frank, 777","Boqueirão","(41) 3287-8908 / 3287-7782"],
+["CRAS Vila São Pedro","Rua Primeiro de Maio, 1214","Xaxim","(41) 3346-0682 / 3268-4285"],
+["CRAS Cajuru","Rua Pedro Violani, 314","Cajuru","(41) 3369-3002 / 3267-1046"],
+["CRAS Iguaçu","Rua Dr. Ivan Jorge Curi, 195","Cajuru","(41) 3226-3346 / 3226-3021"],
+["CRAS Uberaba","Rua Augusto David de Moraes, 160","Uberaba","(41) 3364-2944 / 3258-6485"],
+["CRAS União Ferroviária","Rua Antonio Tortato, 100","Uberaba","(41) 3575-1291 / 3361-2506"],
+["CRAS Acrópole","Rua Antonio Moreira Lopes, 328","Cajuru","(41) 3266-7471 / 3226-1389"],
+["CRAS Barigui","Rua Senador Accioly Filho, 3300","CIC","(41) 3245-8945 / 3239-1678"],
+["CRAS Corbélia","Rua Professora Cecília Iritani, 510","São Miguel","(41) 3332-1999"],
+["CRAS Nossa Senhora da Luz","Rua Davi Xavier da Silva, 451","CIC","(41) 3248-2246 / 3569-1291"],
+["CRAS Vila Sandra","Rua Maria Homan Wisniewski, 717","CIC","(41) 3373-5838 / 3285-2854"],
+["CRAS Vila Verde","Rua Ney Pacheco, 465","CIC","(41) 3268-6436 / 3347-5598"],
+["CRAS Matriz","Praça Rui Barbosa, 101","Centro","(41) 3313-5851 / 3313-5854"],
+["CRAS Vila Torres","Rua Aquelino Orestes Baglioli, 120","Prado Velho","(41) 3218-2405 / 3262-9338"],
+["CRAS Novo Mundo","Av. Brasília, 5931","Novo Mundo","(41) 3212-1421 / 3229-9672"],
+["CRAS Rua da Cidadania Pinheirinho","Av. Winston Churchill, 2033","Pinheirinho","(41) 3313-5467 / 3313-5468"],
+["CRAS Fazendinha","Rua General Potiguara, 2793","Fazendinha","(41) 3288-2603 / 3329-0872"],
+["CRAS Parolin","Rua Francisco Parolin, 881","Parolin","(41) 3333-9919 / 3333-4623"],
+["CRAS Bom Menino","Rua Luciano Hella, 322","Campina do Siqueira","(41) 3336-3689"],
+["CRAS Rua da Cidadania Santa Felicidade","Rua Santa Bertila Boscardin, 213","Santa Felicidade","(41) 3221-2549"],
+["CRAS São Braz","Rua Jaçanã, 447","São Braz","(41) 3285-3050 / 3273-1773"],
+["CRAS Monteiro Lobato","Rua Jornalista Emílio Zolá Florenzano, 300","Tatuquara","(41) 3265-0633 / 3289-5677"],
+["CRAS Pompéia","Rua Heitor Ferreira, 125","Tatuquara","(41) 3396-5476 / 3396-1943"],
+["CRAS Rio Bonito","Rua Marcos Bertoldi, 442","Campo de Santana","(41) 3225-8767 / 3225-9582"],
+["CRAS Santa Rita","Rua Enett Dubard, 602","Tatuquara","(41) 3265-3855 / 3396-1818"],
+["CRAS Caximba","Estrada Delegado Bruno de Almeida, 8280","Caximba","(41) 3265-6977 / 3265-9641"],
+["CRAS Dom Bosco","Rua Júlio Pereira Sobrinho, 102","Campo de Santana","(41) 3349-9256"],
+["CRAS Laguna","Rua Jovenilson Américo de Oliveira, 1510","Tatuquara","(41) 3396-5947"]
+],
+creas:[
+["CREAS Matriz","R. Francisco Torres, 594","Centro","(41) 3262-6812 / 98820-7259"],
+["CREAS Boa Vista","R. Lodovico Geronazzo, 1314","Boa Vista","(41) 3257-1701 / 98820-9250"],
+["CREAS Bairro Novo","Rua João Maranho, 58","Bairro Novo","Telefone não informado — confirme pela FAS"],
+["CREAS Boqueirão","R. Anne Frank, 3272","Boqueirão","(41) 3376-0281 / 98820-7526"],
+["CREAS Cajuru","Av. Pref. Maurício Fruet, 1588","Cajuru","(41) 3366-6014 / 3267-8982"],
+["CREAS CIC","R. Pe. Gaston, 555","Cidade Industrial (CIC)","(41) 3327-5723 / 3327-5837"],
+["CREAS Pinheirinho","R. Dr. Manoel Linhares de Lacerda, 432","Capão Raso","(41) 3347-3541 / 98778-5158"],
+["CREAS Portão","R. Isaac Guelmann, 4043","Portão","(41) 3248-1371 / 3268-1307"],
+["CREAS Santa Felicidade","R. Via Vêneto, 2274","Santa Felicidade","(41) 3272-1811 / 3374-5932"],
+["CREAS Tatuquara","R. José Krenchiclova, 555","Tatuquara","(41) 3227-5427 / 98778-4333"]
+],
+rmc:[
+["CRAS Affonso Celso de Araújo Franco","Estrada da Roseira, 5800","São José dos Pinhais · Borda do Campo","(41) 3382-2786"],
+["CRAS Alcídio Zeni Zaniolo","Rua Senador Darci Ribeiro, 3332","São José dos Pinhais · Vila Iná","(41) 3398-4740"],
+["CRAS Vanilda","Rua Manoel Marcílio de Oliveira, 330","São José dos Pinhais · São Marcos","(41) 3384-2597"],
+["CRAS Cyro Pellizzari II","R. Nelson França, 200","São José dos Pinhais · Jardim Fabíola","(41) 3398-2566"],
+["CRAS Da Juventude","Rua Ieda Solange Ribeiro, 71","São José dos Pinhais · Jardim Alegria","(41) 3398-3468"],
+["CRAS Francisco Quirino dos Santos","Rua Aristides de França, 624","São José dos Pinhais · Cidade Jardim","(41) 3383-6337"],
+["CRAS Helena Meister","Av. Guatupê, 3480","São José dos Pinhais · Jardim Alvorada","(41) 3556-3736"],
+["CRAS Miguel Haluch","Rua Onofre Holtmam, 200","São José dos Pinhais · Rio Pequeno","(41) 3382-2280"],
+["CRAS Parque da Fonte","Rua Lourdes Grutter Bonim, 100","São José dos Pinhais · Jardim Independência","(41) 3381-5836"],
+["CRAS José Zen","Rua Rodolfo Scherner Zagonel, s/n","São José dos Pinhais · Jardim Itália","(41) 3383-6907"],
+["CREAS São José dos Pinhais","Rua Janiópolis, 431","São José dos Pinhais · Cidade Jardim","(41) 3398-2575"],
+["CRAS Sede","Rua José Cavassin, 125","Colombo · Centro","(41) 3656-5572"],
+["CRAS Maracanã","Rua Abel Scuissiato, 40","Colombo · Alto Maracanã","(41) 3663-3966"],
+["CRAS Rio Verde","Rua Getúlio Vargas, 473","Colombo · Rio Verde","(41) 3621-1877"],
+["CRAS Roça Grande","Rua Santo Paschoal Franceschi, 387","Colombo · Osasco","98702-3350"],
+["CRAS Guaraituba","Rua Campo Largo, 200","Colombo · Guaraituba","(41) 3562-6253"],
+["CRAS Graciosa","Rua Anair Bonato Tosin, 677","Colombo · Mauá","(41) 3675-7237"],
+["CRAS Monte Castelo","Rua do Ipê, 972","Colombo · São Dimas","(41) 3675-5983"],
+["CREAS Colombo","Rua Joaquim Rocha, 268","Colombo · Maracanã","(41) 3606-3506"],
+["CRAS Sul","Rua Rio Trombetas, 828","Pinhais · Jardim Weissópolis","Telefone não informado — confirme na prefeitura"],
+["CREAS Pinhais","Rua 25 de Dezembro, 363","Pinhais · Estância Pinhais","(41) 99228-2982"],
+["CRAS Centro","Av. Brasil, 379","Araucária · Centro","(41) 3901-5057"],
+["CREAS Araucária","Av. Brasil, 298","Araucária · Centro","0800 707 2003"],
+["CRAS Rivabem","Rua Luiz Rivabem, 665","Campo Largo · Rivabem","Telefone não informado — confirme na prefeitura"],
+["CRAS II Tanguá","Rua Professor Alberto Krause, 2049","Almirante Tamandaré · Tanguá","0800 726 0101"],
+["CRAS (unidade sede)","Rua Bocaiúva do Sul, 273","Almirante Tamandaré · Jardim Roma","(41) 3699-5501"],
+["CREAS Almirante Tamandaré","Rua Antônio Batista de Siqueira, 621","Almirante Tamandaré · Centro","(41) 3657-1176 / 3657-1008"],
+["CRAS Iguaçu","Rua Rio Paranapanema, 616","Fazenda Rio Grande · Iguaçu","(41) 3608-7664"],
+["CREAS Fazenda Rio Grande","Rua Silvano José Baldan, s/n","Fazenda Rio Grande · Pioneiros","0800 707 2003"]
+]};
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+let atual="cras";
+const lista=document.getElementById("lista"),busca=document.getElementById("busca"),cont=document.getElementById("contagem");
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function render(){
+  const q=norm(busca.value.trim());
+  const itens=DATA[atual].filter(r=>!q||norm(r.join(" ")).includes(q));
+  lista.innerHTML=itens.map(([n,a,b,t])=>`<div class="place${n.startsWith("CREAS")?" creas":""}"><span class="b">${esc(b)}</span><span class="n">${esc(n)}</span><span class="a">${esc(a)}</span><span class="t">${esc(t)}</span></div>`).join("")||`<p class="empty">Nenhuma unidade encontrada. Tente outro bairro ou outra lista acima.</p>`;
+  cont.textContent=q?`${itens.length} de ${DATA[atual].length} unidades`:`${DATA[atual].length} unidades`;
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{
+  atual=b.dataset.list;
+  document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+  render();
+}));
+busca.addEventListener("input",render);
+render();
+
+// destaca o atalho da seção visível
+const links=[...document.querySelectorAll("nav.toc a")];
+const alvos=links.map(a=>document.querySelector(a.getAttribute("href"))).filter(Boolean);
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id&&!l.classList.contains("sos")));}})},{rootMargin:"-40% 0px -55% 0px"});
+  alvos.forEach(t=>io.observe(t));
+}
+
+// botão compartilhar
+(function(){
+  const b=document.getElementById('btn-share'), m=document.getElementById('share-msg');
+  if(!b) return;
+  const url='https://tinyurl.com/m577rxsp';
+  b.addEventListener('click',()=>{
+    const ok=()=>{m.textContent='Link copiado! Agora é só colar no WhatsApp ou nas redes.';};
+    const fail=()=>{m.innerHTML='Copie o link: <b>tinyurl.com/m577rxsp</b>';};
+    try{ navigator.clipboard.writeText(url).then(ok,fail); }catch(e){ fail(); }
+  });
+})();
+</script>
+</body>
+</html>
+
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
